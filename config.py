@@ -1,11 +1,10 @@
+
 # Modernisierte Qtile config.py basierend auf deinem Original
 
 from libqtile import bar, layout, qtile, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
-import os
-import time
 
 mod = "mod1"
 terminal = guess_terminal()
@@ -39,8 +38,9 @@ keys = [
     Key([mod, "control"], "l", lazy.layout.grow_right()),
     Key([mod, "control"], "j", lazy.layout.grow_down()),
     Key([mod, "control"], "k", lazy.layout.grow_up()),
-    Key([mod], "n", lazy.layout.normalize()),
-    Key([mod], "Return", lazy.spawn(terminal)),
+    Key([mod], "n", lazy.spawn("brave-browser --incognito https://www.markt.de/nichtangemeldet.htm")),
+    Key([mod], "m", lazy.spawn("clippy")),
+    Key([mod], "return", lazy.spawn(terminal)),
     Key([mod], "Tab", lazy.layout.next()),
     Key([mod], "space", lazy.next_layout()),
     Key([mod], "w", lazy.window.kill()),
@@ -120,7 +120,7 @@ screens = [
                 border_color="#1e1e2e",
                 graph_color="#a6e3a1",
                 fill_color="#a6e3a166",  # halbtransparent
-                line_width=2,
+                line_width=4,
                 core="all",
                 type="line",
                 frequency=0.05,
@@ -140,7 +140,7 @@ screens = [
                 foreground=colors["blue"],
                 graph_color="#a6e3a1",
                 fill_color="#a6e3a166",  # halbtransparent
-                line_width=2,
+                line_width=4,
                 core="all",
                 type="line",
                 frequency=0.05,
