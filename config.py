@@ -11,6 +11,7 @@ terminal = guess_terminal()
 
 colors = {
     "bg": "#272822",
+    "bg": "#272822",
     "fg": "#f8f8f2",
     "black": "#1e1f1c",
     "red": "#f92672",
